@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <div id="gameDiv">
+
+        <!-- Player -->
+        <div id="player">
+            <img src="images/idle-one.png" alt="You" id="bird">
+        </div>
+
+        <!-- Obstacles -->
+        <div class="obstacle obstacleUp ou300 slidingObj" id="u301"></div>
+        <div class="obstacle obstacleUp ou300 slidingObj" id="u302"></div>
+        <div class="obstacle obstacleUp ou300 slidingObj" id="u303"></div>
+
+        <div class="obstacle obstacleDown od300 slidingObj" id="d301"></div>
+        <div class="obstacle obstacleDown od300 slidingObj" id="d302"></div>
+        <div class="obstacle obstacleDown od300 slidingObj" id="d303"></div>
+
+        <div class="obstacle obstacleUp ou200 slidingObj" id="u201"></div>
+        <div class="obstacle obstacleUp ou200 slidingObj" id="u202"></div>
+        <div class="obstacle obstacleUp ou200 slidingObj" id="u203"></div>
+
+        <div class="obstacle obstacleDown od200 slidingObj" id="d201"></div>
+        <div class="obstacle obstacleDown od200 slidingObj" id="d202"></div>
+        <div class="obstacle obstacleDown od200 slidingObj" id="d203"></div>
+
+        <div class="obstacle obstacleUp ou100 slidingObj" id="u101"></div>
+        <div class="obstacle obstacleUp ou100 slidingObj" id="u102"></div>
+        <div class="obstacle obstacleUp ou100 slidingObj" id="u103"></div>
+
+        <div class="obstacle obstacleDown od100 slidingObj" id="d101"></div>
+        <div class="obstacle obstacleDown od100 slidingObj" id="d102"></div>
+        <div class="obstacle obstacleDown od100 slidingObj" id="d103"></div>
+
+        <!-- Floor -->
+        <div id="floor"></div>
+
+        <!-- Covers -->
+        <div class="blackCover" id="leftCover"></div>
+        <div class="blackCover" id="rightCover"></div>
+
+        <!-- Main Menu -->
+        <div id="menuDiv">
+            <img src="images/menu-title.png" alt="Floppy Bird" id="menuTitle">
+            <div id="menuBtnDiv">
+                <div class="menuBtn" id="playBtn"></div>
+                <div class="menuBtn" id="customBtn"></div>
+            </div>
+            <div id="options">
+                <div id="volumeBtn"></div>
+            </div>
+        </div>
+
+        <!-- Ready State -->
+        <div id="readyDiv">
+            <img src="images/pressSpace.png" alt="Space Bar" id="barLogo">
+        </div>
+
+        <!-- Score -->
+        <div id="scoreDiv">
+            <h2 id="scoreNumber">0</h2>
+        </div>
+
+        <!-- Customisation -->
+        <div id="customisationDiv">
+            <img src="images/customTitle.png" alt="Customise your bird!" id="customTitle">
+            <div id="colorDiv">
+                <button class="colorBtn" id="yellowBtn"></button>
+                <button class="colorBtn" id="greenBtn"></button>
+                <button class="colorBtn" id="blueBtn"></button>
+                <button class="colorBtn" id="redBtn"></button>
+                <button class="colorBtn" id="blackBtn"></button>
+                <button class="colorBtn" id="goldBtn"></button>
+                <button class="colorBtn" id="rainbowBtn"></button>
+            </div>
+            <img src="images/idle-one.png" alt="Your Bird" id="yourBirdImg">
+            <img src="images/backBtn.png" alt="Back" id="backBtn">
+        </div>
+
+        <!-- Death Screen -->
+        <div id="deathDiv">
+            <img src="images/gameOver.png" alt="You Died!" id="deathTitle">
+            <img src="images/yourScore.png" alt="Your Score" id="yourScoreTitle">
+            <h2 id="yourScore">0</h2>
+            <div>
+                <img src="images/retry.png" alt="Try again" id="tryAgainBtn" class="deathBtn">
+                <img src="images/menuLogo.png" alt="Main Menu" id="goMenuBtn" class="deathBtn">
+            </div>
+        </div>
+
+        <!-- Color Locked -->
+        <div id="lockedDiv">
+            <h3 id="lkTitle">
+                Get a Max Score Of
+            </h3>
+            <button id="okBtn">Ok</button>
+        </div>
+
+    </div>
+</body>
+
+</html>

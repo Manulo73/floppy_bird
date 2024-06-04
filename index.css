@@ -1,0 +1,493 @@
+:root {
+    --slidingTime: 5s;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#gameDiv {
+    height: 600px;
+    width: 450px;
+
+    background-image: url("images/flappyBird-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+
+    top: 10px;
+    align-self: center;
+}
+
+/*
+---
+Inside Game Objects
+---
+*/
+
+#floor {
+    height: 45px;
+    width: 100%;
+
+    background-image: url('images/floor.png');
+    opacity: 1;
+
+    position: relative;
+
+    top: 555px;
+}
+
+#player {
+    height: 40px;
+    width: 40px;
+
+    left: 75px;
+
+    top: 250px;
+
+    position: absolute;
+}
+
+#bird {
+    position: relative;
+
+    top: -2px;
+    left: -2px;
+}
+
+.blackCover {
+    width: 125px;
+    height: 100%;
+
+    position: absolute;
+
+    background-color: black;
+
+    z-index: 5;
+}
+
+#leftCover {
+    left: -125px;
+    top: 0px;
+}
+
+#rightCover {
+    top: 0px;
+    right: -125px;
+}
+
+/* 
+---
+Green Pipes / Obstacles
+---
+*/
+
+.obstacle {
+    width: 50px;
+
+    right: -50px;
+
+    z-index: 1;
+
+    position: absolute;
+}
+
+.obstacleUp {
+    top: 0px;
+}
+
+.obstacleDown {
+    bottom: 45px;
+}
+
+.ou300 {
+    height: 300px;
+    background-image: url('images/pipe\ 300-Down.png');
+    /*animation: sliding 10s linear;*/
+}
+
+.ou200 {
+    height: 200px;
+    background-image: url('images/pipe\ 200-Down.png');
+    /*animation: sliding 10s linear;*/
+}
+
+.ou100 {
+    height: 100px;
+    background-image: url('images/pipe\ 100-Down.png');
+    /*animation: sliding 10s linear;*/
+}
+
+.od300 {
+    height: 300px;
+    background-image: url('images/pipe\ 300-Up.png');
+    /*animation: sliding 10s linear;*/
+}
+
+.od200 {
+    height: 200px;
+    background-image: url('images/pipe\ 200-Up.png');
+    /*animation: sliding 10s linear;*/
+}
+
+.od100 {
+    height: 100px;
+    background-image: url('images/pipe\ 100-Up.png');
+    /*animation: sliding 10s linear;*/
+}
+
+.slidingObj {
+    transition: 5s linear;
+}
+
+@keyframes sliding {
+    0% {
+        right: -50px;
+    }
+
+    100% {
+        right: 450px;
+    }
+}
+
+/*
+---
+Main Menu
+---
+*/
+
+#menuDiv {
+    height: 500px;
+    width: 400px;
+
+    left: 25px;
+
+    position: absolute;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#menuTitle {
+    height: 90px;
+    width: 300px;
+}
+
+#menuBtnDiv {
+    margin-top: 50px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuBtn {
+    height: 125px;
+    width: 125px;
+
+    cursor: pointer;
+}
+
+.menuBtn+.menuBtn {
+    margin-left: 20px;
+}
+
+#playBtn {
+    background-image: url(images/playBtn.png);
+    border-width: 0px;
+}
+
+#customBtn {
+    background-image: url(images/customBtn.png);
+    border-width: 0px;
+}
+
+#options {
+    margin-top: 50px;
+}
+
+#volumeBtn {
+    height: 75px;
+    width: 75px;
+    cursor: pointer;
+
+    background-image: url('images/volumeBtn.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*
+---
+Ready State
+---
+*/
+
+#readyDiv {
+    height: 40px;
+    width: 240px;
+    background: none;
+
+    position: absolute;
+
+    top: 340px;
+
+    left: 105px;
+
+    visibility: hidden;
+}
+
+#barLogo {
+    width: 100%;
+    height: 100%;
+}
+
+/*
+---
+Score
+---
+*/
+
+#scoreDiv {
+    position: absolute;
+    left: 47%;
+
+    visibility: hidden;
+}
+
+#scoreNumber {
+    font-size: 40px;
+
+    color: aliceblue;
+    text-shadow: 3px 3px orange;
+}
+
+/*
+---
+Customisation
+---
+*/
+
+#customisationDiv {
+    width: 350px;
+    height: 500px;
+
+    position: absolute;
+
+    left: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    visibility: hidden;
+
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#backBtn {
+    cursor: pointer;
+
+    width: 90px;
+    height: 60px;
+
+    position: absolute;
+
+    top: 350px;
+}
+
+#customTitle {
+    width: 90%;
+    height: 75px;
+
+    position: relative;
+    top: 50px;
+}
+
+#colorDiv {
+    width: 90%;
+    height: 100px;
+
+    position: relative;
+    top: 75px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.colorBtn {
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+    border-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+
+    box-shadow: 3px 3px white;
+}
+
+#yellowBtn {
+    background-color: rgb(247, 255, 9);
+}
+
+#blackBtn {
+    background-color: black;
+}
+
+#blueBtn {
+    background-color: blue;
+}
+
+#redBtn {
+    background-color: red;
+}
+
+#greenBtn {
+    background-color: green;
+}
+
+#goldBtn {
+    background-image: url(images/goldColor.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 3px 3px rgb(241, 227, 209);
+}
+
+#rainbowBtn {
+    background-image: url(images/rainbowColor.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 3px 3px rgb(241, 227, 209);
+}
+
+#yourBirdImg {
+    width: 40px;
+    height: 40px;
+
+    position: relative;
+    top: 90px;
+}
+
+/*
+---
+Death Screen
+---
+*/
+
+#deathDiv {
+    height: 350px;
+    width: 400px;
+
+    position: absolute;
+    left: 25px;
+    top: 100px;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    visibility: hidden;
+    z-index: 10;
+}
+
+#deathTitle {
+    margin-top: 25px;
+
+    width: 350px;
+    height: 50px;
+}
+
+#yourScoreTitle {
+    width: 250px;
+    height: 45px;
+    margin-top: 10px;
+}
+
+#yourScore {
+    margin-top: 15px;
+    font-size: 40px;
+
+    color: aliceblue;
+    text-shadow: 3px 3px orange;
+}
+
+.deathBtn {
+    margin-top: 50px;
+    height: 65px;
+    width: 65px;
+    cursor: pointer;
+}
+
+.deathBtn+.deathBtn {
+    margin-left: 25px;
+}
+
+/*
+---
+Locked Ad
+---
+*/
+
+#lockedDiv {
+    height: 100px;
+    width: 200px;
+    background-color: black;
+
+    position: absolute;
+    left: 125px;
+    top: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 11;
+
+    visibility: hidden;
+}
+
+#lkTitle {
+    font-size: 15px;
+    margin-top: 25px;
+
+    color: white;
+}
+
+#okBtn {
+    margin-top: 10px;
+    width: 50px;
+    height: 25px;
+    cursor: pointer;
+
+    color: white;
+    border-radius: 1px;
+    border-color: white;
+    border-style: solid;
+
+    background-color: black;
+    letter-spacing: 1px;
+}
